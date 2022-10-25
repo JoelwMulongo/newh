@@ -5,7 +5,7 @@ var Snake = (function () {
 
   var intervalID;
 
-  var tileCount = 10;
+  var tileCount = 20;
   var gridSize = 400/tileCount;
 
   const INITIAL_PLAYER = { x: Math.floor(tileCount / 2), y: Math.floor(tileCount / 2) };
@@ -134,7 +134,7 @@ var Snake = (function () {
       if (velocity.x == -1 && velocity.y == 0) lastAction = ActionEnum.left;
       if (velocity.x == 1 && velocity.y == 0) lastAction = ActionEnum.right;
 
-      ctx.fillStyle = 'rgba(40,40,40,0.8)';
+      ctx.fillStyle = 'rgba(208, 0, 238, 0.8)';
       ctx.fillRect(0,0,canv.width,canv.height);
 
       if(walls) HitWall();
@@ -148,8 +148,8 @@ var Snake = (function () {
       }
 
       if(!stopped) {
-        ctx.fillStyle = 'rgba(200,200,200,0.2)';
-        ctx.font = "small-caps 14px Helvetica";
+        ctx.fillStyle = 'rgba(1,20,0,0.8)';
+        ctx.font = "small-caps 14px market";
         ctx.fillText("(esc) reset", 24, 356);
         ctx.fillText("(space) pause", 24, 374);
       }
@@ -188,12 +188,12 @@ var Snake = (function () {
       ctx.fillRect(fruit.x * gridSize+1, fruit.y * gridSize+1, gridSize-2, gridSize-2);
 
       if(stopped) {
-        ctx.fillStyle = 'rgba(250,250,250,0.8)';
+        ctx.fillStyle = 'rgba(0,230,0,0.8)';
         ctx.font = "small-caps bold 14px Helvetica";
         ctx.fillText("press ARROW KEYS to START...", 24, 374);
       }
 
-      ctx.fillStyle = 'violet';
+      ctx.fillStyle = 'black';
       ctx.font = "bold small-caps 16px Helvetica";
       ctx.fillText("points: " + points, 288, 40);
       ctx.fillText("top: " + pointsMax, 292, 60);
